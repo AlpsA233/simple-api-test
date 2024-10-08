@@ -15,7 +15,6 @@ export async function POST(request: Request) {
     }
 
     const response = await fetch(url, fetchOptions)
-    console.log('response', response);
     const responseHeaders: Record<string, string> = {}
     response.headers.forEach((value, key) => {
       responseHeaders[key] = value

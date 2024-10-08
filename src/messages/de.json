@@ -1,0 +1,21 @@
+{
+  "title": "Postman-Klon",
+  "url": "URL eingeben",
+  "method": "Methode auswählen",
+  "queryParams": "Abfrageparameter",
+  "headers": "Header",
+  "body": "Anfragekörper",
+  "send": "Anfrage senden",
+  "addParam": "Parameter hinzufügen",
+  "addHeader": "Header hinzufügen",
+  "key": "Schlüssel",
+  "value": "Wert",
+  "statusCode": "Statuscode",
+  "responseHeaders": "Antwort-Header",
+  "responseBody": "Antwortkörper",
+  "waitingResponse": "Warte auf Antwort...",
+  "requestSent": "Anfrage erfolgreich gesendet",
+  "requestFailed": "Anfrage fehlgeschlagen",
+  "errorCheckConsole": "Ein Fehler ist aufgetreten. Bitte überprüfen Sie die Konsole für weitere Informationen.",
+  "selectLanguage": "Sprache auswählen"
+}

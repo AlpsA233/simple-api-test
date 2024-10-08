@@ -1,0 +1,21 @@
+{
+  "title": "Postman Clone",
+  "url": "Enter URL",
+  "method": "Select Method",
+  "queryParams": "Query Parameters",
+  "headers": "Headers",
+  "body": "Request Body",
+  "send": "Send Request",
+  "addParam": "Add Parameter",
+  "addHeader": "Add Header",
+  "key": "Key",
+  "value": "Value",
+  "statusCode": "Status Code",
+  "responseHeaders": "Response Headers",
+  "responseBody": "Response Body",
+  "waitingResponse": "Waiting for response...",
+  "requestSent": "Request sent successfully",
+  "requestFailed": "Request failed",
+  "errorCheckConsole": "An error occurred. Please check the console for more information.",
+  "selectLanguage": "Select language"
+}

@@ -1,0 +1,21 @@
+{
+  "title": "Postmanクローン",
+  "url": "URLを入力",
+  "method": "メソッドを選択",
+  "queryParams": "クエリパラメータ",
+  "headers": "ヘッダー",
+  "body": "リクエストボディ",
+  "send": "リクエスト送信",
+  "addParam": "パラメータを追加",
+  "addHeader": "ヘッダーを追加",
+  "key": "キー",
+  "value": "値",
+  "statusCode": "ステータスコード",
+  "responseHeaders": "レスポンスヘッダー",
+  "responseBody": "レスポンスボディ",
+  "waitingResponse": "レスポンス待ち...",
+  "requestSent": "リクエストが正常に送信されました",
+  "requestFailed": "リクエストが失敗しました",
+  "errorCheckConsole": "エラーが発生しました。詳細はコンソールを確認してください。",
+  "selectLanguage": "言語を選択"
+}

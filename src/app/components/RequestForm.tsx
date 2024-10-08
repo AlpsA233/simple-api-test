@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useTranslations } from 'next-intl'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import {
@@ -23,6 +24,8 @@ interface RequestFormProps {
 type HeaderParam = { key: string; value: string }
 
 export default function RequestForm({ onResponse }: RequestFormProps) {
+  const t = useTranslations()
+  
   const [url, setUrl] = useState('')
   const [method, setMethod] = useState('GET')
   const [headers, setHeaders] = useState<HeaderParam[]>([{ key: '', value: '' }])
@@ -55,14 +58,14 @@ export default function RequestForm({ onResponse }: RequestFormProps) {
       const data = await response.json()
       onResponse(data)
       toast({
-        title: "请求发送成功",
-        description: `状态码: ${data.status}`,
+        title: t('requestSent'),
+        description: `${t('statusCode')}: ${data.status}`,
       })
     } catch (error) {
       console.error('Error sending request:', error)
       toast({
-        title: "请求发送失败",
-        description: "发生错误，请检查控制台以获取更多信息",
+        title: t('requestFailed'),
+        description: t('errorCheckConsole'),
         variant: "destructive",
       })
     }
@@ -86,12 +89,12 @@ export default function RequestForm({ onResponse }: RequestFormProps) {
         type="url"
         value={url}
         onChange={(e) => setUrl(e.target.value)}
-        placeholder="输入URL"
+        placeholder={t('url')}
         required
       />
       <Select value={method} onValueChange={setMethod}>
         <SelectTrigger className="w-full">
-          <SelectValue placeholder="选择请求方法" />
+          <SelectValue placeholder={t('method')} />
         </SelectTrigger>
         <SelectContent>
           <SelectItem value="GET">GET</SelectItem>
@@ -102,12 +105,12 @@ export default function RequestForm({ onResponse }: RequestFormProps) {
       </Select>
       
       <div>
-        <h3 className="text-lg font-semibold mb-2">查询参数</h3>
+        <h3 className="text-lg font-semibold mb-2">{t('queryParams')}</h3>
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>键</TableHead>
-              <TableHead>值</TableHead>
+              <TableHead>{t('key')}</TableHead>
+              <TableHead>{t('value')}</TableHead>
               <TableHead></TableHead>
             </TableRow>
           </TableHeader>
@@ -127,16 +130,16 @@ export default function RequestForm({ onResponse }: RequestFormProps) {
             ))}
           </TableBody>
         </Table>
-        <Button type="button" onClick={() => addRow(setQueryParams)} className="mt-2"><Plus size={16} className="mr-2" /> 添加参数</Button>
+        <Button type="button" onClick={() => addRow(setQueryParams)} className="mt-2"><Plus size={16} className="mr-2" /> {t('addParam')}</Button>
       </div>
 
       <div>
-        <h3 className="text-lg font-semibold mb-2">请求头</h3>
+        <h3 className="text-lg font-semibold mb-2">{t('headers')}</h3>
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>键</TableHead>
-              <TableHead>值</TableHead>
+              <TableHead>{t('key')}</TableHead>
+              <TableHead>{t('value')}</TableHead>
               <TableHead></TableHead>
             </TableRow>
           </TableHeader>
@@ -156,15 +159,15 @@ export default function RequestForm({ onResponse }: RequestFormProps) {
             ))}
           </TableBody>
         </Table>
-        <Button type="button" onClick={() => addRow(setHeaders)} className="mt-2"><Plus size={16} className="mr-2" /> 添加请求头</Button>
+        <Button type="button" onClick={() => addRow(setHeaders)} className="mt-2"><Plus size={16} className="mr-2" /> {t('addHeader')}</Button>
       </div>
 
       <Textarea
         value={body}
         onChange={(e) => setBody(e.target.value)}
-        placeholder="输入请求体"
+        placeholder={t('body')}
       />
-      <Button type="submit">发送请求</Button>
+      <Button type="submit">{t('send')}</Button>
     </form>
   )
 }
