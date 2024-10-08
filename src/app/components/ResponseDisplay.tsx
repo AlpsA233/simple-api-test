@@ -25,8 +25,8 @@ export default function ResponseDisplay({ response }: ResponseDisplayProps) {
   const isHtml = currentResponse.headers['content-type']?.includes('text/html')
 
   return (
-    <div className="space-y-4">
-      <div>
+    <div className="space-y-6">
+      <div className="flex items-center space-x-4">
         <h2 className="text-lg font-semibold">状态码：</h2>
         <p className={`text-2xl font-bold ${statusColor}`}>{currentResponse.status}</p>
       </div>
@@ -35,7 +35,7 @@ export default function ResponseDisplay({ response }: ResponseDisplayProps) {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>键</TableHead>
+              <TableHead className="w-1/3">键</TableHead>
               <TableHead>值</TableHead>
             </TableRow>
           </TableHeader>
@@ -50,9 +50,9 @@ export default function ResponseDisplay({ response }: ResponseDisplayProps) {
         </Table>
       </div>
       <div>
-        <h2 className="text-lg font-semibold">响应体：</h2>
+        <h2 className="text-lg font-semibold mb-2">响应体：</h2>
         {isHtml ? (
-          <div className="border rounded p-4 overflow-auto max-h-96">
+          <div className="border rounded p-4 overflow-auto" style={{ height: '50vh' }}>
             <iframe
               srcDoc={currentResponse.body}
               className="w-full h-full"
@@ -61,7 +61,7 @@ export default function ResponseDisplay({ response }: ResponseDisplayProps) {
             />
           </div>
         ) : (
-          <pre className="bg-gray-100 p-2 rounded overflow-auto max-h-96">
+          <pre className="bg-gray-100 p-4 rounded overflow-auto" style={{ maxHeight: '50vh' }}>
             {currentResponse.body}
           </pre>
         )}

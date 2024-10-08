@@ -3,7 +3,6 @@ import { parseHeaders } from '../../lib/utils'
 
 export async function POST(request: Request) {
   const { url, method, headers, body } = await request.json()
-  console.log('headers=', (headers || Object.keys(headers).length > 0));
   
   try {
     const fetchOptions: RequestInit = {
