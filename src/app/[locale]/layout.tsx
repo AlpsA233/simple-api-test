@@ -9,8 +9,8 @@ import { notFound } from 'next/navigation'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Postman Clone',
-  description: 'A web-based clone of Postman for API testing',
+  title: 'SimpleApiTest',
+  description: 'A simple web-based tool for API testing',
 }
 
 export function generateStaticParams() {
