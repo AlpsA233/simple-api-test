@@ -11,8 +11,13 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
+import { Response } from '../lib/types'
 
-export default function RequestForm() {
+interface RequestFormProps {
+  onResponse: (response: Response) => void
+}
+
+export default function RequestForm({ onResponse }: RequestFormProps) {
   const [url, setUrl] = useState('')
   const [method, setMethod] = useState('GET')
   const [headers, setHeaders] = useState('')
@@ -20,16 +25,20 @@ export default function RequestForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // 这里我们将调用服务器端API来发送请求
-    const response = await fetch('/api/send-request', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ url, method, headers, body }),
-    })
-    const data = await response.json()
-    // 处理响应数据...
+    try {
+      const response = await fetch('/api/send-request', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ url, method, headers, body }),
+      })
+      const data = await response.json()
+      onResponse(data)
+    } catch (error) {
+      console.error('Error sending request:', error)
+      // 可以在这里添加错误处理逻辑
+    }
   }
 
   return (
