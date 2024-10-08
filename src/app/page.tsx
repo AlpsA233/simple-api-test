@@ -4,18 +4,22 @@ import { useState } from 'react'
 import RequestForm from './components/RequestForm'
 import ResponseDisplay from './components/ResponseDisplay'
 import { Response } from './lib/types'
+import { Toaster } from "@/components/ui/toaster"
 
 export default function Home() {
   const [response, setResponse] = useState<Response | null>(null)
 
   return (
-    <main className="flex-1 flex">
-      <div className="flex-1 p-4">
-        <RequestForm onResponse={setResponse} />
-      </div>
-      <div className="flex-1 p-4">
-        <ResponseDisplay response={response} />
-      </div>
-    </main>
+    <>
+      <main className="flex-1 flex">
+        <div className="flex-1 p-4">
+          <RequestForm onResponse={setResponse} />
+        </div>
+        <div className="flex-1 p-4">
+          <ResponseDisplay response={response} />
+        </div>
+      </main>
+      <Toaster />
+    </>
   )
 }

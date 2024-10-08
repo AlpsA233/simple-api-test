@@ -2,51 +2,59 @@
 
 import { useState, useEffect } from 'react'
 import { Response } from '../lib/types'
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 
 interface ResponseDisplayProps {
   response: Response | null
 }
 
-export default function ResponseDisplay( props: ResponseDisplayProps) {
-  const [response, setResponse] = useState<Response | null>(props.response || null)
-
-  // 这个函数将被用来更新响应数据
-  const updateResponse = (newResponse: Response) => {
-    setResponse(newResponse)
-  }
+export default function ResponseDisplay({ response }: ResponseDisplayProps) {
+  const [currentResponse, setCurrentResponse] = useState<Response | null>(response)
 
   useEffect(() => {
-    // 这里可以添加逻辑来监听或获取响应数据
-    console.log('props', props);
-    if (props.response) {
-      updateResponse(props.response);
-    }
-  }, [props])
+    setCurrentResponse(response)
+  }, [response])
 
-  if (!response) {
+  if (!currentResponse) {
     return <div className="text-gray-500">等待响应...</div>
   }
 
-  const isHtml = response.headers['content-type']?.includes('text/html')
+  const isSuccess = currentResponse.status >= 200 && currentResponse.status < 300
+  const statusColor = isSuccess ? 'text-green-600' : 'text-red-600'
+
+  const isHtml = currentResponse.headers['content-type']?.includes('text/html')
 
   return (
     <div className="space-y-4">
       <div>
         <h2 className="text-lg font-semibold">状态码：</h2>
-        <p>{response.status}</p>
+        <p className={`text-2xl font-bold ${statusColor}`}>{currentResponse.status}</p>
       </div>
       <div>
-        <h2 className="text-lg font-semibold">响应头：</h2>
-        <pre className="bg-gray-100 p-2 rounded overflow-auto max-h-40">
-          {JSON.stringify(response.headers, null, 2)}
-        </pre>
+        <h2 className="text-lg font-semibold mb-2">响应头：</h2>
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead>键</TableHead>
+              <TableHead>值</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {Object.entries(currentResponse.headers).map(([key, value]) => (
+              <TableRow key={key}>
+                <TableCell className="font-medium">{key}</TableCell>
+                <TableCell>{value}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
       </div>
       <div>
         <h2 className="text-lg font-semibold">响应体：</h2>
         {isHtml ? (
           <div className="border rounded p-4 overflow-auto max-h-96">
             <iframe
-              srcDoc={response.body}
+              srcDoc={currentResponse.body}
               className="w-full h-full"
               sandbox="allow-same-origin"
               title="Response Content"
@@ -54,7 +62,7 @@ export default function ResponseDisplay( props: ResponseDisplayProps) {
           </div>
         ) : (
           <pre className="bg-gray-100 p-2 rounded overflow-auto max-h-96">
-            {response.body}
+            {currentResponse.body}
           </pre>
         )}
       </div>

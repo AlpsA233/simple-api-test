@@ -3,14 +3,20 @@ import { parseHeaders } from '../../lib/utils'
 
 export async function POST(request: Request) {
   const { url, method, headers, body } = await request.json()
-
+  console.log('headers=', (headers || Object.keys(headers).length > 0));
+  
   try {
-    const response = await fetch(url, {
+    const fetchOptions: RequestInit = {
       method,
-      headers: parseHeaders(headers),
-      body: method !== 'GET' ? body : undefined,
-    })
+      headers: (headers && Object.keys(headers).length > 0) ? parseHeaders(headers) : undefined,
+    }
 
+    if (method !== 'GET' && body) {
+      fetchOptions.body = body
+    }
+
+    const response = await fetch(url, fetchOptions)
+    console.log('response', response);
     const responseHeaders: Record<string, string> = {}
     response.headers.forEach((value, key) => {
       responseHeaders[key] = value
