@@ -28,8 +28,8 @@ export default function Home({ params: { locale } }: { params: { locale: string 
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <main className="container mx-auto px-4 py-8">
+    <div className="flex flex-col min-h-screen bg-gray-50">
+      <main className="container mx-auto px-4 py-8 flex-grow">
         <div className="mb-8 flex justify-end">
           <Select value={language} onValueChange={handleLanguageChange}>
             <SelectTrigger className="w-[180px] bg-white shadow-sm border-2 border-purple-300 focus:border-purple-500">

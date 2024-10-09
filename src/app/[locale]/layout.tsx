@@ -31,7 +31,7 @@ export default async function RootLayout({
   let messages;
   try {
     
-    messages = (await import(`../../messages/${locale}.json`)).default;
+    messages = (await import(`@/messages/${locale}.json`)).default;
   } catch (error) {
     console.error('Error loading messages:', error);
     notFound();
@@ -44,10 +44,14 @@ export default async function RootLayout({
       </head>
       <body className={`${inter.className} flex flex-col min-h-screen`}>
       <ClientProvider locale={locale} messages={messages}>
+        <div className="flex flex-col min-h-screen">
           <Header />
-          {children}
+          <main className="flex-grow">
+            {children}
+          </main>
           <Footer />
-        </ClientProvider>
+        </div>
+      </ClientProvider>
       </body>
     </html>
   )
