@@ -91,12 +91,13 @@ export default function RequestForm({ onResponse }: RequestFormProps) {
         onChange={(e) => setUrl(e.target.value)}
         placeholder={t('url')}
         required
+        className="bg-primary text-text border-secondary"
       />
       <Select value={method} onValueChange={setMethod}>
-        <SelectTrigger className="w-full">
+        <SelectTrigger className="w-full bg-primary text-text border-secondary">
           <SelectValue placeholder={t('method')} />
         </SelectTrigger>
-        <SelectContent>
+        <SelectContent className="bg-primary text-text">
           <SelectItem value="GET">GET</SelectItem>
           <SelectItem value="POST">POST</SelectItem>
           <SelectItem value="PUT">PUT</SelectItem>
@@ -105,12 +106,12 @@ export default function RequestForm({ onResponse }: RequestFormProps) {
       </Select>
       
       <div>
-        <h3 className="text-lg font-semibold mb-2">{t('queryParams')}</h3>
-        <Table>
+        <h3 className="text-lg font-semibold mb-2 text-text">{t('queryParams')}</h3>
+        <Table className="bg-primary text-text">
           <TableHeader>
             <TableRow>
-              <TableHead>{t('key')}</TableHead>
-              <TableHead>{t('value')}</TableHead>
+              <TableHead className="text-text">{t('key')}</TableHead>
+              <TableHead className="text-text">{t('value')}</TableHead>
               <TableHead></TableHead>
             </TableRow>
           </TableHeader>
@@ -130,7 +131,7 @@ export default function RequestForm({ onResponse }: RequestFormProps) {
             ))}
           </TableBody>
         </Table>
-        <Button type="button" onClick={() => addRow(setQueryParams)} className="mt-2 bg-blue-600 hover:bg-blue-700 text-white"><Plus size={16} className="mr-2" /> {t('addParam')}</Button>
+        <Button type="button" onClick={() => addRow(setQueryParams)} className="mt-2  bg-gray-900 hover:bg-gray-700 text-white"><Plus size={16} className="mr-2" /> {t('addParam')}</Button>
       </div>
 
       <div>
@@ -159,7 +160,7 @@ export default function RequestForm({ onResponse }: RequestFormProps) {
             ))}
           </TableBody>
         </Table>
-        <Button type="button" onClick={() => addRow(setHeaders)} className="mt-2 bg-blue-600 hover:bg-blue-700 text-white"><Plus size={16} className="mr-2" /> {t('addHeader')}</Button>
+        <Button type="button" onClick={() => addRow(setHeaders)} className="mt-2  bg-gray-900 hover:bg-gray-700 text-white"><Plus size={16} className="mr-2" /> {t('addHeader')}</Button>
       </div>
 
       <Textarea
@@ -167,7 +168,7 @@ export default function RequestForm({ onResponse }: RequestFormProps) {
         onChange={(e) => setBody(e.target.value)}
         placeholder={t('body')}
       />
-      <Button type="submit" className='mt-2 bg-blue-600 hover:bg-blue-700 text-white'>{t('send')}</Button>
+      <Button type="submit" className='mt-2 bg-gray-900 hover:bg-gray-700 text-white'>{t('send')}</Button>
     </form>
   )
 }

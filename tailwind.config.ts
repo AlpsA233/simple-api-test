@@ -10,8 +10,10 @@ const config: Config = {
   theme: {
   	extend: {
   		colors: {
-  			background: 'hsl(var(--background))',
-  			foreground: 'hsl(var(--foreground))',
+			background: '#F5F5F5',
+			text: '#333333',
+			primary: '#E0E0E0',
+			secondary: '#BDBDBD',
   			card: {
   				DEFAULT: 'hsl(var(--card))',
   				foreground: 'hsl(var(--card-foreground))'
@@ -19,24 +21,6 @@ const config: Config = {
   			popover: {
   				DEFAULT: 'hsl(var(--popover))',
   				foreground: 'hsl(var(--popover-foreground))'
-  			},
-  			primary: {
-  				DEFAULT: 'hsl(var(--primary))',
-  				foreground: 'hsl(var(--primary-foreground))',
-				50: '#e6f0ff',
-				100: '#b3d1ff',
-				200: '#80b3ff',
-				300: '#4d94ff',
-				400: '#1a75ff',
-				500: '#0056e6',
-				600: '#0044b3',
-				700: '#003380',
-				800: '#00224d',
-				900: '#00111a',
-  			},
-  			secondary: {
-  				DEFAULT: 'hsl(var(--secondary))',
-  				foreground: 'hsl(var(--secondary-foreground))'
   			},
   			muted: {
   				DEFAULT: 'hsl(var(--muted))',
@@ -60,26 +44,6 @@ const config: Config = {
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
   			},
-			  purple: {
-				300: '#d8b4fe',
-				500: '#a855f7',
-				600: '#9333ea',
-			  },
-			  pink: {
-				500: '#ec4899',
-			  },
-			  red: {
-				500: '#ef4444',
-			  },
-			  yellow: {
-				300: '#fde047',
-			  },
-			  green: {
-				500: '#22c55e',
-			  },
-			  teal: {
-				500: '#14b8a6',
-			  },
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

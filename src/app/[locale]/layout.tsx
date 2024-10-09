@@ -42,7 +42,7 @@ export default async function RootLayout({
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
-      <body className={`${inter.className} flex flex-col min-h-screen`}>
+      <body className={`${inter.className} flex flex-col min-h-screen bg-background text-text`}>
       <ClientProvider locale={locale} messages={messages}>
         <div className="flex flex-col min-h-screen">
           <Header />

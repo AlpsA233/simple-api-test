@@ -28,23 +28,23 @@ export default function Home({ params: { locale } }: { params: { locale: string 
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
+    <div className="flex flex-col min-h-screen bg-background">
       <main className="container mx-auto px-4 py-8 flex-grow">
         <div className="mb-8 flex justify-end">
           <Select value={language} onValueChange={handleLanguageChange}>
-            <SelectTrigger className="w-[180px] bg-white shadow-sm border-2 border-purple-300 focus:border-purple-500">
+            <SelectTrigger className="w-[180px] bg-primary text-text border-2 border-secondary focus:border-text">
               <SelectValue placeholder={t('selectLanguage')} />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="bg-primary text-text">
               <SelectItem value="en">English</SelectItem>
               <SelectItem value="ja">日本語</SelectItem>
               <SelectItem value="de">Deutsch</SelectItem>
             </SelectContent>
           </Select>
         </div>
-        <div className="bg-white shadow-xl rounded-lg overflow-hidden">
-          <div className="bg-gradient-to-r from-blue-700 to-blue-900 p-4">
-            <h1 className="text-2xl font-bold text-white">{t('apiTestTitle')}</h1>
+        <div className="bg-primary shadow-xl rounded-lg overflow-hidden">
+          <div className="bg-secondary p-4">
+            <h1 className="text-2xl font-bold text-text">{t('apiTestTitle')}</h1>
           </div>
           <div className="p-6">
             <RequestForm onResponse={setResponse} />
