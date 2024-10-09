@@ -7,11 +7,13 @@ export async function POST(request: Request) {
   try {
     const fetchOptions: RequestInit = {
       method,
-      headers: (headers && Object.keys(headers).length > 0) ? parseHeaders(headers) : undefined,
+      headers: (headers && Object.keys(headers).length > 0) ? headers : {},
     }
 
     if (method !== 'GET' && body) {
       fetchOptions.body = body
+      // 如果存在body，则应该设置content-type
+      fetchOptions.headers = { ...fetchOptions.headers, 'Content-Type': 'application/json' }
     }
 
     const response = await fetch(url, fetchOptions)
@@ -21,6 +23,7 @@ export async function POST(request: Request) {
     })
 
     const responseBody = await response.text()
+    
 
     return NextResponse.json({
       status: response.status,

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -16,6 +16,9 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Plus, Trash2 } from 'lucide-react'
 import { Response } from '../lib/types'
 import { useToast } from '@/hooks/use-toast'
+import dynamic from 'next/dynamic'
+
+const JsonEditor = dynamic(() => import('./JsonEditor'), { ssr: false })
 
 interface RequestFormProps {
   onResponse: (response: Response) => void
@@ -30,8 +33,13 @@ export default function RequestForm({ onResponse }: RequestFormProps) {
   const [method, setMethod] = useState('GET')
   const [headers, setHeaders] = useState<HeaderParam[]>([{ key: '', value: '' }])
   const [queryParams, setQueryParams] = useState<HeaderParam[]>([{ key: '', value: '' }])
-  const [body, setBody] = useState('')
+  const [body, setBody] = useState('{\n\t"example": "Paste your JSON here"\n}')
   const { toast } = useToast()
+  const [isEditorLoaded, setIsEditorLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsEditorLoaded(true);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -163,11 +171,11 @@ export default function RequestForm({ onResponse }: RequestFormProps) {
         <Button type="button" onClick={() => addRow(setHeaders)} className="mt-2  bg-gray-900 hover:bg-gray-700 text-white"><Plus size={16} className="mr-2" /> {t('addHeader')}</Button>
       </div>
 
-      <Textarea
-        value={body}
-        onChange={(e) => setBody(e.target.value)}
-        placeholder={t('body')}
-      />
+      {isEditorLoaded ? (
+        <JsonEditor value={body} onChange={setBody} />
+      ) : (
+        <div>Loading editor...</div>
+      )}
       <Button type="submit" className='mt-2 bg-gray-900 hover:bg-gray-700 text-white'>{t('send')}</Button>
     </form>
   )

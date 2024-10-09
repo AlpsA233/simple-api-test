@@ -24,7 +24,7 @@ export default function ResponseDisplay({ response }: ResponseDisplayProps) {
   const isSuccess = currentResponse.status >= 200 && currentResponse.status < 300
   const statusColor = isSuccess ? 'text-green-600' : 'text-red-600'
 
-  const isHtml = currentResponse.headers['content-type']?.includes('text/html')
+  const isHtml = currentResponse.headers && currentResponse.headers['content-type']?.includes('text/html')
 
   return (
     <div className="space-y-6">
@@ -42,7 +42,7 @@ export default function ResponseDisplay({ response }: ResponseDisplayProps) {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {Object.entries(currentResponse.headers).map(([key, value]) => (
+            {currentResponse.headers && Object.entries(currentResponse.headers).map(([key, value]) => (
               <TableRow key={key}>
                 <TableCell className="font-medium">{key}</TableCell>
                 <TableCell>{value}</TableCell>
