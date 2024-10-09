@@ -17,5 +17,12 @@
   "requestSent": "リクエストが正常に送信されました",
   "requestFailed": "リクエストが失敗しました",
   "errorCheckConsole": "エラーが発生しました。詳細はコンソールを確認してください。",
-  "selectLanguage": "言語を選択"
+  "selectLanguage": "言語を選択",
+  "home": "ホーム",
+  "about": "概要",
+  "contact": "お問い合わせ",
+  "apiTestTitle": "APIテスト",
+  "responseTitle": "レスポンス",
+  "footerText": "SimpleApiTest - 迅速かつ簡単なAPIテストのためのツール",
+  "allRightsReserved": "全権利所有"
 }

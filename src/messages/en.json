@@ -17,5 +17,12 @@
   "requestSent": "Request sent successfully",
   "requestFailed": "Request failed",
   "errorCheckConsole": "An error occurred. Please check the console for more information.",
-  "selectLanguage": "Select language"
+  "selectLanguage": "Select language",
+  "home": "Home",
+  "about": "About",
+  "contact": "Contact",
+  "apiTestTitle": "API Test",
+  "responseTitle": "Response",
+  "footerText": "SimpleApiTest - Your tool for quick and easy API testing",
+  "allRightsReserved": "All rights reserved"
 }

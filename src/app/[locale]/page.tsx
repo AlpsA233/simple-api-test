@@ -29,10 +29,10 @@ export default function Home({ params: { locale } }: { params: { locale: string 
 
   return (
     <>
-      <main className="flex-1 flex flex-col p-4 max-w-6xl mx-auto">
-        <div className="mb-4 flex justify-end">
+      <main className="flex-1 flex flex-col p-8 max-w-6xl mx-auto">
+        <div className="mb-8 flex justify-end">
           <Select value={language} onValueChange={handleLanguageChange}>
-            <SelectTrigger className="w-[180px]">
+            <SelectTrigger className="w-[180px] bg-white shadow-sm">
               <SelectValue placeholder={t('selectLanguage')} />
             </SelectTrigger>
             <SelectContent>
@@ -42,10 +42,12 @@ export default function Home({ params: { locale } }: { params: { locale: string 
             </SelectContent>
           </Select>
         </div>
-        <div className="mb-8">
+        <div className="bg-white shadow-lg rounded-lg p-8 mb-8">
+          <h1 className="text-3xl font-bold mb-6 text-gray-800">{t('apiTestTitle')}</h1>
           <RequestForm onResponse={setResponse} />
         </div>
-        <div>
+        <div className="bg-white shadow-lg rounded-lg p-8">
+          <h2 className="text-2xl font-semibold mb-4 text-gray-800">{t('responseTitle')}</h2>
           <ResponseDisplay response={response} />
         </div>
       </main>  

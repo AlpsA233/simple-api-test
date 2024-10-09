@@ -17,5 +17,12 @@
   "requestSent": "Anfrage erfolgreich gesendet",
   "requestFailed": "Anfrage fehlgeschlagen",
   "errorCheckConsole": "Ein Fehler ist aufgetreten. Bitte überprüfen Sie die Konsole für weitere Informationen.",
-  "selectLanguage": "Sprache auswählen"
+  "selectLanguage": "Sprache auswählen",
+  "home": "Startseite",
+  "about": "Über uns",
+  "contact": "Kontakt",
+  "apiTestTitle": "API-Test",
+  "responseTitle": "Antwort",
+  "footerText": "SimpleApiTest - Ihr Werkzeug für schnelle und einfache API-Tests",
+  "allRightsReserved": "Alle Rechte vorbehalten"
 }
