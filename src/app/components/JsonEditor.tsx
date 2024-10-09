@@ -7,7 +7,7 @@ interface JsonEditorProps {
 }
 
 const JsonEditor: React.FC<JsonEditorProps> = ({ value, onChange }) => {
-    const [editor, setEditor] = useState(null)
+    const [editor, setEditor] = useState<monaco.editor.IStandaloneCodeEditor | null>(null)
 
     useEffect(() => {
       const initMonaco = async () => {
@@ -17,7 +17,6 @@ const JsonEditor: React.FC<JsonEditorProps> = ({ value, onChange }) => {
       initMonaco()
     }, [])
   const editorRef = useRef(null);
-//   const [editor, setEditor] = useState<monaco.editor.IStandaloneCodeEditor | null>(null);
 
   useEffect(() => {
     if (editorRef.current) {
