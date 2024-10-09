@@ -28,11 +28,11 @@ export default function Home({ params: { locale } }: { params: { locale: string 
   }
 
   return (
-    <>
-      <main className="flex-1 flex flex-col p-8 max-w-6xl mx-auto">
+    <div className="min-h-screen bg-gray-100">
+      <main className="container mx-auto px-4 py-8">
         <div className="mb-8 flex justify-end">
           <Select value={language} onValueChange={handleLanguageChange}>
-            <SelectTrigger className="w-[180px] bg-white shadow-sm">
+            <SelectTrigger className="w-[180px] bg-white shadow-sm border-2 border-purple-300 focus:border-purple-500">
               <SelectValue placeholder={t('selectLanguage')} />
             </SelectTrigger>
             <SelectContent>
@@ -42,16 +42,26 @@ export default function Home({ params: { locale } }: { params: { locale: string 
             </SelectContent>
           </Select>
         </div>
-        <div className="bg-white shadow-lg rounded-lg p-8 mb-8">
-          <h1 className="text-3xl font-bold mb-6 text-gray-800">{t('apiTestTitle')}</h1>
-          <RequestForm onResponse={setResponse} />
+        <div className="bg-white shadow-xl rounded-lg overflow-hidden">
+          <div className="bg-gradient-to-r from-purple-600 to-pink-500 p-6">
+            <h1 className="text-3xl font-bold text-white">{t('apiTestTitle')}</h1>
+          </div>
+          <div className="p-6">
+            <RequestForm onResponse={setResponse} />
+          </div>
         </div>
-        <div className="bg-white shadow-lg rounded-lg p-8">
-          <h2 className="text-2xl font-semibold mb-4 text-gray-800">{t('responseTitle')}</h2>
-          <ResponseDisplay response={response} />
-        </div>
+        {response && (
+          <div className="mt-8 bg-white shadow-xl rounded-lg overflow-hidden">
+            <div className="bg-gradient-to-r from-green-500 to-teal-500 p-6">
+              <h2 className="text-2xl font-semibold text-white">{t('responseTitle')}</h2>
+            </div>
+            <div className="p-6">
+              <ResponseDisplay response={response} />
+            </div>
+          </div>
+        )}
       </main>  
       <Toaster />
-    </>
+    </div>
   )
 }

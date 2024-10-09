@@ -59,7 +59,27 @@ const config: Config = {
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
-  			}
+  			},
+			  purple: {
+				300: '#d8b4fe',
+				500: '#a855f7',
+				600: '#9333ea',
+			  },
+			  pink: {
+				500: '#ec4899',
+			  },
+			  red: {
+				500: '#ef4444',
+			  },
+			  yellow: {
+				300: '#fde047',
+			  },
+			  green: {
+				500: '#22c55e',
+			  },
+			  teal: {
+				500: '#14b8a6',
+			  },
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

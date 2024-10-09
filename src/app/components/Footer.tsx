@@ -3,10 +3,25 @@ import { useTranslations } from 'next-intl'
 export default function Footer() {
   const t = useTranslations()
   return (
-    <footer className="bg-gray-800 text-white py-8">
-      <div className="container mx-auto text-center">
-        <p className="mb-2">{t('footerText')}</p>
-        <p className="text-sm text-gray-400">&copy; {new Date().getFullYear()} SimpleApiTest. {t('allRightsReserved')}</p>
+    <footer className="bg-gray-800 text-white">
+      <div className="container mx-auto px-4 py-8">
+        <div className="flex flex-wrap justify-between items-center">
+          <div className="w-full md:w-1/3 text-center md:text-left mb-6 md:mb-0">
+            <h2 className="text-2xl font-bold mb-2">SimpleApiTest</h2>
+            <p className="text-gray-400">{t('footerText')}</p>
+          </div>
+          <div className="w-full md:w-1/3 text-center mb-6 md:mb-0">
+            <h3 className="text-lg font-semibold mb-2">{t('quickLinks')}</h3>
+            <ul className="space-y-2">
+              <li><a href="#" className="hover:text-purple-300 transition-colors">{t('home')}</a></li>
+              <li><a href="#" className="hover:text-purple-300 transition-colors">{t('about')}</a></li>
+              <li><a href="#" className="hover:text-purple-300 transition-colors">{t('contact')}</a></li>
+            </ul>
+          </div>
+          <div className="w-full md:w-1/3 text-center md:text-right">
+            <p>&copy; {new Date().getFullYear()} SimpleApiTest. {t('allRightsReserved')}</p>
+          </div>
+        </div>
       </div>
     </footer>
   )
