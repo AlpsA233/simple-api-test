@@ -5,6 +5,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { NextIntlClientProvider } from 'next-intl'
 import { notFound } from 'next/navigation'
+import {unstable_setRequestLocale} from 'next-intl/server'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -25,6 +26,7 @@ export default async function RootLayout({
   params: { locale: string }
 }) {
   const locale = params.locale || 'en';
+  unstable_setRequestLocale(locale);
   let messages;
   try {
     
