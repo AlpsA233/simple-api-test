@@ -130,7 +130,7 @@ export default function RequestForm({ onResponse }: RequestFormProps) {
             ))}
           </TableBody>
         </Table>
-        <Button type="button" onClick={() => addRow(setQueryParams)} className="mt-2"><Plus size={16} className="mr-2" /> {t('addParam')}</Button>
+        <Button type="button" onClick={() => addRow(setQueryParams)} className="mt-2 bg-blue-600 hover:bg-blue-700 text-white"><Plus size={16} className="mr-2" /> {t('addParam')}</Button>
       </div>
 
       <div>
@@ -159,7 +159,7 @@ export default function RequestForm({ onResponse }: RequestFormProps) {
             ))}
           </TableBody>
         </Table>
-        <Button type="button" onClick={() => addRow(setHeaders)} className="mt-2"><Plus size={16} className="mr-2" /> {t('addHeader')}</Button>
+        <Button type="button" onClick={() => addRow(setHeaders)} className="mt-2 bg-blue-600 hover:bg-blue-700 text-white"><Plus size={16} className="mr-2" /> {t('addHeader')}</Button>
       </div>
 
       <Textarea
@@ -167,7 +167,7 @@ export default function RequestForm({ onResponse }: RequestFormProps) {
         onChange={(e) => setBody(e.target.value)}
         placeholder={t('body')}
       />
-      <Button type="submit">{t('send')}</Button>
+      <Button type="submit" className='mt-2 bg-blue-600 hover:bg-blue-700 text-white'>{t('send')}</Button>
     </form>
   )
 }

@@ -28,7 +28,7 @@ export default function Home({ params: { locale } }: { params: { locale: string 
   }
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-50">
       <main className="container mx-auto px-4 py-8">
         <div className="mb-8 flex justify-end">
           <Select value={language} onValueChange={handleLanguageChange}>
@@ -43,8 +43,8 @@ export default function Home({ params: { locale } }: { params: { locale: string 
           </Select>
         </div>
         <div className="bg-white shadow-xl rounded-lg overflow-hidden">
-          <div className="bg-gradient-to-r from-purple-600 to-pink-500 p-6">
-            <h1 className="text-3xl font-bold text-white">{t('apiTestTitle')}</h1>
+          <div className="bg-gradient-to-r from-blue-700 to-blue-900 p-4">
+            <h1 className="text-2xl font-bold text-white">{t('apiTestTitle')}</h1>
           </div>
           <div className="p-6">
             <RequestForm onResponse={setResponse} />
@@ -52,8 +52,8 @@ export default function Home({ params: { locale } }: { params: { locale: string 
         </div>
         {response && (
           <div className="mt-8 bg-white shadow-xl rounded-lg overflow-hidden">
-            <div className="bg-gradient-to-r from-green-500 to-teal-500 p-6">
-              <h2 className="text-2xl font-semibold text-white">{t('responseTitle')}</h2>
+            <div className="bg-gradient-to-r from-gray-700 to-gray-800 p-4">
+              <h2 className="text-xl font-semibold text-white">{t('responseTitle')}</h2>
             </div>
             <div className="p-6">
               <ResponseDisplay response={response} />

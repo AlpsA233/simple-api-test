@@ -4,8 +4,8 @@ import Link from 'next/link'
 export default function Header() {
   const t = useTranslations()
   return (
-    <header className="bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 text-white">
-      <div className="container mx-auto px-4 py-6 flex items-center justify-between">
+    <header className="bg-gradient-to-r from-blue-700 to-blue-900 text-white">
+      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
           <img src="/logo.svg" alt="SimpleApiTest Logo" className="w-60 h-16" />
         </Link>
