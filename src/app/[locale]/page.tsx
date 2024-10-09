@@ -21,8 +21,10 @@ export default function Home({ params: { locale } }: { params: { locale: string 
   }, [locale])
 
   const handleLanguageChange = (newLanguage: string) => {
-    const newPathname = pathname.replace(`/${language}`, `/${newLanguage}`)
-    router.push(newPathname)
+    const segments = pathname.split('/');
+    segments[1] = newLanguage;
+    const newPathname = segments.join('/');
+    router.push(newPathname);
   }
 
   return (
