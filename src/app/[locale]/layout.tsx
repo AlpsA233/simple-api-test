@@ -6,6 +6,7 @@ import Footer from '../components/Footer'
 import { notFound } from 'next/navigation'
 import { unstable_setRequestLocale } from 'next-intl/server'
 import ClientProvider from './ClientProvider'
+import { GoogleTagManager } from '@next/third-parties/google'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -41,14 +42,6 @@ export default async function RootLayout({
     <html lang={locale}>
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-HRWBDT8FJ7"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-HRWBDT8FJ7');
-        </script>
       </head>
       <body className={`${inter.className} flex flex-col min-h-screen bg-background text-text`}>
       <ClientProvider locale={locale} messages={messages}>
@@ -61,6 +54,7 @@ export default async function RootLayout({
         </div>
       </ClientProvider>
       </body>
+      <GoogleTagManager gtmId="G-HRWBDT8FJ7" />
     </html>
   )
 }
