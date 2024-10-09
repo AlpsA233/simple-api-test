@@ -1,0 +1,12 @@
+{
+    "rewrites": [
+      {
+        "source": "/:locale(en|ja|de)/:path*",
+        "destination": "/:locale/:path*"
+      },
+      {
+        "source": "/:path*",
+        "destination": "/en/:path*"
+      }
+    ]
+  }
