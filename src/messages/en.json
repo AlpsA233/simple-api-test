@@ -24,5 +24,23 @@
   "apiTestTitle": "API Test",
   "responseTitle": "Response",
   "footerText": "SimpleApiTest - Your tool for quick and easy API testing",
-  "allRightsReserved": "All rights reserved"
+  "allRightsReserved": "All rights reserved",
+  "locale": "en",
+  "quickLinks": "Quick Links",
+  "About": {
+    "title": "About SimpleApiTest",
+    "description": "SimpleApiTest is a powerful, user-friendly tool for API testing. It allows developers and testers to quickly and easily send HTTP requests and analyze responses.",
+    "features": "Key Features",
+    "feature1": "Support for multiple HTTP methods",
+    "feature2": "Custom headers and parameters",
+    "feature3": "Response visualization"
+  },
+  "Contact": {
+    "title": "Contact Us",
+    "description": "Have questions or feedback? We'd love to hear from you. Here's how you can reach us:",
+    "contactInfo": "Contact Information",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address"
+  }
 }

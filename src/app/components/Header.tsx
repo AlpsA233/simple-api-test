@@ -11,9 +11,9 @@ export default function Header() {
         </Link>
         <nav>
           <ul className="flex space-x-6 text-lg">
-            <li><Link href="/" className="hover:text-yellow-300 transition-colors">{t('home')}</Link></li>
-            <li><Link href="/about" className="hover:text-yellow-300 transition-colors">{t('about')}</Link></li>
-            <li><Link href="/contact" className="hover:text-yellow-300 transition-colors">{t('contact')}</Link></li>
+            <li><Link href={`/${t('locale')}`} className="hover:text-yellow-300 transition-colors">{t('home')}</Link></li>
+            <li><Link href={`/${t('locale')}/about`} className="hover:text-yellow-300 transition-colors">{t('about')}</Link></li>
+            <li><Link href={`/${t('locale')}/contact`} className="hover:text-yellow-300 transition-colors">{t('contact')}</Link></li>
           </ul>
         </nav>
       </div>

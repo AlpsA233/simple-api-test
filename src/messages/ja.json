@@ -24,5 +24,23 @@
   "apiTestTitle": "APIテスト",
   "responseTitle": "レスポンス",
   "footerText": "SimpleApiTest - 迅速かつ簡単なAPIテストのためのツール",
-  "allRightsReserved": "全権利所有"
+  "allRightsReserved": "全権利所有",
+  "locale": "ja",
+  "quickLinks": "クイックリンク",
+  "About": {
+    "title": "SimpleApiTestについて",
+    "description": "SimpleApiTestは、APIテスト用の強力で使いやすいツールです。開発者やテスターが迅速かつ簡単にHTTPリクエストを送信し、レスポンスを分析することができます。",
+    "features": "主な機能",
+    "feature1": "複数のHTTPメソッドのサポート",
+    "feature2": "カスタムヘッダーとパラメータ",
+    "feature3": "レスポンスの可視化"
+  },
+  "Contact": {
+    "title": "お問い合わせ",
+    "description": "ご質問やフィードバックがありますか？お聞かせください。以下の方法でお問い合わせいただけます：",
+    "contactInfo": "連絡先情報",
+    "email": "メール",
+    "phone": "電話",
+    "address": "住所"
+  }
 }
