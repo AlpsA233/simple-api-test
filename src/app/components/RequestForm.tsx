@@ -174,7 +174,7 @@ export default function RequestForm({ onResponse }: RequestFormProps) {
       {isEditorLoaded ? (
         <JsonEditor value={body} onChange={setBody} />
       ) : (
-        <div>Loading editor...</div>
+        <div>{t('loadingEditor')}</div>
       )}
       <Button type="submit" className='mt-2 bg-gray-900 hover:bg-gray-700 text-white'>{t('send')}</Button>
     </form>

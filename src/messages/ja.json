@@ -27,6 +27,7 @@
   "allRightsReserved": "全権利所有",
   "locale": "ja",
   "quickLinks": "クイックリンク",
+  "loadingEditor": "エディターを読み込んでいます...",
   "About": {
     "title": "SimpleApiTestについて",
     "description": "SimpleApiTestは、APIテスト用の強力で使いやすいツールです。開発者やテスターが迅速かつ簡単にHTTPリクエストを送信し、レスポンスを分析することができます。",

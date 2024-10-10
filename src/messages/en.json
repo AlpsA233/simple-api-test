@@ -27,6 +27,7 @@
   "allRightsReserved": "All rights reserved",
   "locale": "en",
   "quickLinks": "Quick Links",
+  "loadingEditor": "Loading editor...",
   "About": {
     "title": "About SimpleApiTest",
     "description": "SimpleApiTest is a powerful, user-friendly tool for API testing. It allows developers and testers to quickly and easily send HTTP requests and analyze responses.",
