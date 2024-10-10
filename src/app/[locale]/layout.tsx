@@ -42,6 +42,7 @@ export default async function RootLayout({
     <html lang={locale}>
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <script defer src="https://umami.aerbu2.top/script.js" data-website-id="df96be92-c2ff-4854-b888-723d6922dbc1"></script>
       </head>
       <body className={`${inter.className} flex flex-col min-h-screen bg-background text-text`}>
       <ClientProvider locale={locale} messages={messages}>
