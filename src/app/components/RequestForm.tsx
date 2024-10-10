@@ -33,7 +33,7 @@ export default function RequestForm({ onResponse }: RequestFormProps) {
   const [method, setMethod] = useState('GET')
   const [headers, setHeaders] = useState<HeaderParam[]>([{ key: '', value: '' }])
   const [queryParams, setQueryParams] = useState<HeaderParam[]>([{ key: '', value: '' }])
-  const [body, setBody] = useState('{\n\t"example": "Paste your JSON here"\n}')
+  const [body, setBody] = useState('{\n\t"example": "Paste your body JSON here"\n}')
   const { toast } = useToast()
   const [isEditorLoaded, setIsEditorLoaded] = useState(false);
 
