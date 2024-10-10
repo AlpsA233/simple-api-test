@@ -43,7 +43,7 @@ export default function Header() {
             </PopoverTrigger>
             <PopoverContent className='bg-primary w-32 rounded-xl shadow-neutral-600'>
                 {languageList.map((language) => (
-                  <div>
+                  <div key={language.value}>
                     <Button className='w-full text-black' variant="link" key={language.value} onClick={() => handleLanguageChange(language.value)}>
                       <p className='mr-1'>{language.flag}</p>{language.label}
                     </Button>
