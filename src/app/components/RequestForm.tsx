@@ -105,7 +105,7 @@ export default function RequestForm({ onResponse }: RequestFormProps) {
         <SelectTrigger className="w-full bg-primary text-text border-secondary">
           <SelectValue placeholder={t('method')} />
         </SelectTrigger>
-        <SelectContent className="bg-primary text-text">
+        <SelectContent className="bg-primary text-text rounded-md">
           <SelectItem value="GET">GET</SelectItem>
           <SelectItem value="POST">POST</SelectItem>
           <SelectItem value="PUT">PUT</SelectItem>
@@ -139,7 +139,7 @@ export default function RequestForm({ onResponse }: RequestFormProps) {
             ))}
           </TableBody>
         </Table>
-        <Button type="button" onClick={() => addRow(setQueryParams)} className="mt-2  bg-gray-900 hover:bg-gray-700 text-white"><Plus size={16} className="mr-2" /> {t('addParam')}</Button>
+        <Button type="button" onClick={() => addRow(setQueryParams)} className="ml-2 mt-2  bg-gray-900 hover:bg-gray-700 text-white rounded-md"><Plus size={16} className="mr-2" /> {t('addParam')}</Button>
       </div>
 
       <div>
@@ -168,7 +168,7 @@ export default function RequestForm({ onResponse }: RequestFormProps) {
             ))}
           </TableBody>
         </Table>
-        <Button type="button" onClick={() => addRow(setHeaders)} className="mt-2  bg-gray-900 hover:bg-gray-700 text-white"><Plus size={16} className="mr-2" /> {t('addHeader')}</Button>
+        <Button type="button" onClick={() => addRow(setHeaders)} className="ml-2 mt-2  bg-gray-900 hover:bg-gray-700 text-white rounded-md"><Plus size={16} className="mr-2" /> {t('addHeader')}</Button>
       </div>
 
       {isEditorLoaded ? (
@@ -176,7 +176,7 @@ export default function RequestForm({ onResponse }: RequestFormProps) {
       ) : (
         <div>{t('loadingEditor')}</div>
       )}
-      <Button type="submit" className='mt-2 bg-gray-900 hover:bg-gray-700 text-white'>{t('send')}</Button>
+      <Button type="submit" className='ml-2 mt-2 bg-gray-900 hover:bg-gray-700 text-white rounded-md'>{t('send')}</Button>
     </form>
   )
 }
